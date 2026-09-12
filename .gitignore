@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# 学習・書き出し成果物（大きいので追跡しない。scripts で再生成する）
+artifacts/
+checkpoints/
+exports/
+*.onnx
+*.gguf
+*.safetensors
+*.bin
+
+# 生成される評価結果・図は再現可能なのでコミット対象は限定
+# （benchmarks/results.json と figures/*.svg は README から参照するのでコミットする）
+data/cache/
+.DS_Store

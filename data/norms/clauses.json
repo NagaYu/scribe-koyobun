@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "description": "Scribe が根拠として参照する規範条項の構造化データ。各条項は公開されている一次資料の該当箇所を指し、本文は短い要約（原文の逐語転載ではない）に留める。ClauseCitation はこの id を指摘に対応づけて『なぜ直すのか』を示す。",
+    "sources": {
+      "kangae": {
+        "title": "公用文作成の考え方（建議）",
+        "issuer": "文化審議会",
+        "date": "令和4年1月7日 (2022-01-07)",
+        "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/93657201.html"
+      },
+      "kunrei": {
+        "title": "公用文における漢字使用等について（内閣訓令第1号）",
+        "issuer": "内閣",
+        "date": "平成22年11月30日 (2010-11-30)",
+        "note": "『考え方』が引き継ぐ運用上の語例一覧の出典。仮名で書く語句・漢字で書く語句の具体的な列挙はここにある。"
+      },
+      "okurigana": {
+        "title": "送り仮名の付け方（内閣告示）",
+        "issuer": "内閣",
+        "date": "昭和48年6月18日 内閣告示第2号（平成22年一部改正）"
+      },
+      "joyo": {
+        "title": "常用漢字表（内閣告示第2号）",
+        "issuer": "内閣",
+        "date": "平成22年11月30日"
+      }
+    }
+  },
+  "clauses": [
+    {
+      "id": "C-KEISHIKI-1",
+      "title": "形式名詞は原則として仮名で書く",
+      "rule_type": "context",
+      "category": "formal_noun",
+      "source": "kangae",
+      "source_locator": "I 表記の原則 1 漢字の使い方（形式名詞）／内閣訓令第1号 別紙 第1（仮名で書く語句・形式名詞）",
+      "summary": "『こと・とき・ところ・もの・わけ・ため・とおり・うち』などを、それだけで実質的な意味を持たない形式名詞として用いるときは、原則として仮名で書く。",
+      "counterpart": "C-JISHITSU-1",
+      "examples_kana": ["確認が必要なことがある。", "事故のときは連絡する。", "現在のところ問題はない。", "正しいものと認める。"],
+      "note": "『考え方』は解説・広報等ではより親しみやすい表記を許容し、文書の種類により厳格さが変わる（強制度はプロファイルで調整）。"
+    },
+    {
+      "id": "C-JISHITSU-1",
+      "title": "実質的な意味を持つ語は漢字で書く",
+      "rule_type": "context",
+      "category": "substantive",
+      "source": "kunrei",
+      "source_locator": "内閣訓令第1号 別紙 第1（漢字で書く語句）",
+      "summary": "同じ語でも、具体的な事柄・時刻時期・場所・物体・人などの実質的な意味で用いるときは漢字で書く（事・時・所・物・者 など）。",
+      "counterpart": "C-KEISHIKI-1",
+      "examples_kanji": ["事の重大さを認識する。", "その時が来た。", "住む所を探す。", "重い物を運ぶ。"],
+      "note": "形式名詞との判別は前後の統語的な働きで決まり、辞書・正規表現の一律置換では原理的に解けない（Scribe の主張の核）。"
+    },
+    {
+      "id": "C-HOJODOUSHI-1",
+      "title": "補助動詞は原則として仮名で書く",
+      "rule_type": "context",
+      "category": "aux_verb",
+      "source": "kangae",
+      "source_locator": "I 表記の原則 1 漢字の使い方（補助的な用法）／内閣訓令第1号 別紙 第1（補助動詞）",
+      "summary": "『〜ていく・〜てくる・〜てみる・〜ておく・〜ていただく・〜てください・〜てくれる・〜てあげる・〜てしまう』などの補助動詞は、原則として仮名で書く。",
+      "counterpart": "C-HONDOUSHI-1",
+      "examples_kana": ["負担が増えていく。", "資料を送っておく。", "詳しく調べてみる。", "御記入いただく。", "ここに御記入ください。"],
+      "note": "直前が『て／で』の連用接続であることが補助動詞の統語的目印。"
+    },
+    {
+      "id": "C-HONDOUSHI-1",
+      "title": "本来の意味の動詞は漢字で書く",
+      "rule_type": "context",
+      "category": "main_verb",
+      "source": "kunrei",
+      "source_locator": "内閣訓令第1号 別紙 第1（漢字で書く語句）",
+      "summary": "同じ語でも本動詞として実質的な動作・授受を表すときは漢字で書く（頂く=もらうの謙譲、下さる=くれるの尊敬、見る=視覚、置く・来る など）。",
+      "counterpart": "C-HOJODOUSHI-1",
+      "examples_kanji": ["記念品を頂く。", "御指導を下さる。", "資料に目を通して状況を見る。", "荷物を棚に置く。"],
+      "note": "本動詞は自立して目的語をとる。補助動詞との差は文脈でのみ決まる。"
+    },
+    {
+      "id": "C-KEIYOU-1",
+      "title": "補助的に用いる形容詞・助動詞は仮名で書く",
+      "rule_type": "context",
+      "category": "aux_adj",
+      "source": "kunrei",
+      "source_locator": "内閣訓令第1号 別紙 第1（仮名で書く語句・補助的用法／助動詞）",
+      "summary": "『〜てよい・〜てほしい・〜がない（打消し）』のように補助的に用いる語は仮名で書く（例：問題はない／御確認いただくとよい）。",
+      "counterpart": null,
+      "examples_kana": ["提出しなくてよい。", "御確認いただくとよい。", "差し支えはない。"]
+    },
+    {
+      "id": "R-OKURI-1",
+      "title": "送り仮名は本則による（確定的なもの）",
+      "rule_type": "deterministic",
+      "category": "okurigana",
+      "source": "okurigana",
+      "source_locator": "送り仮名の付け方 本則（通則1〜6）",
+      "summary": "活用語の送り仮名は本則に従う。誤りが確定的なもの（行なう→行う、表わす→表す、着物→着物、受付ける→受け付ける 等）は規則で判定できる。",
+      "counterpart": null,
+      "examples": ["行なう→行う", "表わす→表す", "現われる→現れる", "少い→少ない"]
+    },
+    {
+      "id": "R-NUM-1",
+      "title": "数字は原則として算用数字を用いる（横書き）",
+      "rule_type": "deterministic",
+      "category": "number",
+      "source": "kangae",
+      "source_locator": "I 表記の原則 4 数字を使う際の注意",
+      "summary": "横書きでは算用数字を用いる。概数・慣用的な語・成語（数十／一つ一つ／四季 など）や、『二十歳』のような特別な語は例外。",
+      "counterpart": null,
+      "examples": ["３つ→3つ（算用数字）", "一〇〇→100"]
+    },
+    {
+      "id": "R-NUM-2",
+      "title": "大きな数は三桁ごとに区切り、万・億・兆を用いる",
+      "rule_type": "deterministic",
+      "category": "number",
+      "source": "kangae",
+      "source_locator": "I 表記の原則 4 数字を使う際の注意",
+      "summary": "大きな数は三桁ごとにコンマで区切る。兆・億・万は漢字を使う（例：5,000／1億2,000万）。",
+      "counterpart": null,
+      "examples": ["1200000→120万", "10000→1万 または 10,000"]
+    },
+    {
+      "id": "R-PUNC-1",
+      "title": "句読点は「。」と「、」を用いる",
+      "rule_type": "deterministic",
+      "category": "punctuation",
+      "source": "kangae",
+      "source_locator": "I 表記の原則 5 符号の使い方",
+      "summary": "句点は『。』、読点は『、』を用いる。横書きでは読点に『，』を用いてもよいとされ、組織の慣用がある場合はそれに従う（プロファイルで切替）。ピリオド『．』を句点に流用しない。",
+      "counterpart": null,
+      "examples": ["文末が．→。", "半角カンマ , → 、"]
+    },
+    {
+      "id": "R-BRACKET-1",
+      "title": "括弧は（　）と「　」を基本とする",
+      "rule_type": "deterministic",
+      "category": "bracket",
+      "source": "kangae",
+      "source_locator": "I 表記の原則 5 符号の使い方",
+      "summary": "括弧は丸括弧『（　）』とかぎ括弧『「　」』を基本に用いる。半角括弧 ( ) は全角に統一する。",
+      "counterpart": null,
+      "examples": ["(注) → （注）", "半角括弧の全角化"]
+    },
+    {
+      "id": "R-UNIT-1",
+      "title": "単位は算用数字と組み合わせて用いる",
+      "rule_type": "deterministic",
+      "category": "unit",
+      "source": "kangae",
+      "source_locator": "I 表記の原則 4 数字を使う際の注意",
+      "summary": "単位を伴う数量は算用数字を用い、単位の表記を統一する（ｍ→m のような全角英字の半角化を含む）。",
+      "counterpart": null,
+      "examples": ["１０ｋｍ → 10km"]
+    }
+  ]
+}

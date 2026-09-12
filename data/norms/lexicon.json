@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "description": "文脈依存の漢字/かな使い分けの対象語。各語は『かな形が正しい用法(kana_clause)』と『漢字形が正しい用法(kanji_clause)』の両方を持つため、一律置換では原理的に片方を必ず誤る。flip.py はここを反転して位置既知の誤りを生成し、model.py はこの語の出現を判定対象とする。",
+    "fields": {
+      "lemma": "語の代表形（辞書見出し）",
+      "kana": "仮名表記",
+      "kanji": "漢字表記（複数可）",
+      "kana_clause": "かな表記が規範上正しい用法に対応する条項ID",
+      "kanji_clause": "漢字表記が規範上正しい用法に対応する条項ID",
+      "contested": "true の語は同一語が両用法で頻出し hard 集合の中核になる",
+      "kana_only": "true の語は常に仮名（漢字用法が常用漢字表外等で存在しない）"
+    }
+  },
+  "entries": [
+    {"lemma": "こと", "kana": "こと", "kanji": ["事"], "category": "formal_noun", "kana_clause": "C-KEISHIKI-1", "kanji_clause": "C-JISHITSU-1", "contested": true},
+    {"lemma": "とき", "kana": "とき", "kanji": ["時"], "category": "formal_noun", "kana_clause": "C-KEISHIKI-1", "kanji_clause": "C-JISHITSU-1", "contested": true},
+    {"lemma": "ところ", "kana": "ところ", "kanji": ["所"], "category": "formal_noun", "kana_clause": "C-KEISHIKI-1", "kanji_clause": "C-JISHITSU-1", "contested": true},
+    {"lemma": "もの", "kana": "もの", "kanji": ["物"], "category": "formal_noun", "kana_clause": "C-KEISHIKI-1", "kanji_clause": "C-JISHITSU-1", "contested": true},
+    {"lemma": "わけ", "kana": "わけ", "kanji": ["訳"], "category": "formal_noun", "kana_clause": "C-KEISHIKI-1", "kanji_clause": "C-JISHITSU-1", "contested": true},
+    {"lemma": "とおり", "kana": "とおり", "kanji": ["通り"], "category": "formal_noun", "kana_clause": "C-KEISHIKI-1", "kanji_clause": "C-JISHITSU-1", "contested": true},
+    {"lemma": "うち", "kana": "うち", "kanji": ["内"], "category": "formal_noun", "kana_clause": "C-KEISHIKI-1", "kanji_clause": "C-JISHITSU-1", "contested": true},
+    {"lemma": "ため", "kana": "ため", "kanji": ["為"], "category": "formal_noun", "kana_clause": "C-KEISHIKI-1", "kanji_clause": "C-JISHITSU-1", "contested": false, "kana_only": true,
+     "note": "『為』は常用漢字表の音訓に基づかない用法のため公用文では原則かな。"},
+
+    {"lemma": "いただく", "kana": "いただく", "kanji": ["頂く"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": true},
+    {"lemma": "ください", "kana": "ください", "kanji": ["下さい"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": true},
+    {"lemma": "くださる", "kana": "くださる", "kanji": ["下さる"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": true},
+    {"lemma": "みる", "kana": "みる", "kanji": ["見る"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": true},
+    {"lemma": "おく", "kana": "おく", "kanji": ["置く"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": true},
+    {"lemma": "いく", "kana": "いく", "kanji": ["行く"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": true},
+    {"lemma": "くる", "kana": "くる", "kanji": ["来る"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": true},
+    {"lemma": "くれる", "kana": "くれる", "kanji": ["呉れる"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": false},
+    {"lemma": "しまう", "kana": "しまう", "kanji": ["仕舞う"], "category": "aux_verb", "kana_clause": "C-HOJODOUSHI-1", "kanji_clause": "C-HONDOUSHI-1", "contested": false, "kana_only": true}
+  ]
+}

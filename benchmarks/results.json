@@ -1,0 +1,145 @@
+{
+  "dataset": {
+    "total_occurrences": 105,
+    "hard_occurrences": 94,
+    "correct_examples": 53,
+    "flipped_examples": 52,
+    "source": "synthetic-seed (CC0)"
+  },
+  "systems": {
+    "A_prh_uniform": {
+      "n": 105,
+      "accuracy": 0.5619047619047619,
+      "hard_n": 94,
+      "hard_accuracy": 0.5106382978723404,
+      "precision": 0.5576923076923077,
+      "recall": 0.5576923076923077,
+      "f1": 0.5576923076923077,
+      "over_flag_rate": 0.4339622641509434,
+      "by_category": {
+        "formal_noun": 0.6065573770491803,
+        "aux_verb": 0.5
+      },
+      "by_usage": {
+        "formal_noun": 1.0,
+        "substantive": 0.0,
+        "main_verb": 0.0,
+        "aux_verb": 1.0
+      },
+      "by_goldkind": {
+        "kana": 1.0,
+        "kanji": 0.0
+      },
+      "hard_by_goldkind": {
+        "kana": 1.0,
+        "kanji": 0.0
+      }
+    },
+    "B_joyo_checker": {
+      "n": 105,
+      "accuracy": 0.5047619047619047,
+      "hard_n": 94,
+      "hard_accuracy": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "over_flag_rate": 0.0,
+      "by_category": {
+        "formal_noun": 0.5081967213114754,
+        "aux_verb": 0.5
+      },
+      "by_usage": {
+        "formal_noun": 0.5135135135135135,
+        "substantive": 0.5,
+        "main_verb": 0.5,
+        "aux_verb": 0.5
+      },
+      "by_goldkind": {
+        "kana": 0.5084745762711864,
+        "kanji": 0.5
+      },
+      "hard_by_goldkind": {
+        "kana": 0.5,
+        "kanji": 0.5
+      }
+    },
+    "C_llm_prompt": {
+      "status": "N/A（API キー未設定のため未実行）"
+    },
+    "D_scribe": {
+      "n": 105,
+      "accuracy": 0.9428571428571428,
+      "hard_n": 94,
+      "hard_accuracy": 0.9361702127659575,
+      "precision": 0.9423076923076923,
+      "recall": 0.9423076923076923,
+      "f1": 0.9423076923076923,
+      "over_flag_rate": 0.05660377358490566,
+      "by_category": {
+        "formal_noun": 0.9016393442622951,
+        "aux_verb": 1.0
+      },
+      "by_usage": {
+        "formal_noun": 1.0,
+        "substantive": 0.75,
+        "main_verb": 1.0,
+        "aux_verb": 1.0
+      },
+      "by_goldkind": {
+        "kana": 1.0,
+        "kanji": 0.8695652173913043
+      },
+      "hard_by_goldkind": {
+        "kana": 1.0,
+        "kanji": 0.8695652173913043
+      }
+    },
+    "E_scribe_quant": {
+      "n": 105,
+      "accuracy": 0.9428571428571428,
+      "hard_n": 94,
+      "hard_accuracy": 0.9361702127659575,
+      "precision": 0.9423076923076923,
+      "recall": 0.9423076923076923,
+      "f1": 0.9423076923076923,
+      "over_flag_rate": 0.05660377358490566,
+      "by_category": {
+        "formal_noun": 0.9016393442622951,
+        "aux_verb": 1.0
+      },
+      "by_usage": {
+        "formal_noun": 1.0,
+        "substantive": 0.75,
+        "main_verb": 1.0,
+        "aux_verb": 1.0
+      },
+      "by_goldkind": {
+        "kana": 1.0,
+        "kanji": 0.8695652173913043
+      },
+      "hard_by_goldkind": {
+        "kana": 1.0,
+        "kanji": 0.8695652173913043
+      },
+      "note": "量子化モデル未指定のため D と同値（ニューラル学習後は export.py で量子化版を生成し --model-quant で計測）"
+    }
+  },
+  "rule_layer": {
+    "rule_expected": 10,
+    "rule_caught": 10,
+    "rule_recall": 1.0,
+    "rule_false_positive_on_clean": 0
+  },
+  "latency": {
+    "method": "heuristic",
+    "n_texts": 101,
+    "ms_per_sentence": 0.05344251815168949
+  },
+  "labels": {
+    "A_prh_uniform": "(A) prh 一律置換",
+    "B_joyo_checker": "(B) 常用漢字チェック",
+    "C_llm_prompt": "(C) 汎用LLM",
+    "D_scribe": "(D) Scribe 量子化前",
+    "E_scribe_quant": "(E) Scribe 量子化後"
+  }
+}

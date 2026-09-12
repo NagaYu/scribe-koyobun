@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scribe-koyobun"
+version = "0.1.0"
+description = "公用文の文脈依存の漢字/かな使い分けを判定し、規範の条項を根拠として返す小型モデル"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Scribe project" }]
+keywords = ["japanese", "koyobun", "orthography", "kanji", "kana", "nlp", "token-classification"]
+
+# コア（規則層 + ヒューリスティック分類 + CLI）は最小依存で動く。
+dependencies = [
+    "PyYAML>=6.0",
+    "fugashi>=1.3",
+    "unidic-lite>=1.0.8",
+]
+
+[project.optional-dependencies]
+# 学習・エクスポート・ニューラル推論
+neural = ["torch>=2.0", "transformers>=4.38", "datasets>=2.16", "numpy>=1.24"]
+# 評価と図の生成
+eval = ["numpy>=1.24", "matplotlib>=3.7"]
+# Gradio Space
+app = ["gradio>=4.0"]
+# 書き出し
+export = ["onnx>=1.15", "onnxruntime>=1.17", "optimum>=1.17"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+scribe = "scribe.cli:main"
+
+[project.urls]
+Homepage = "https://huggingface.co/scribe-koyobun"
+
+[tool.setuptools]
+packages = ["scribe"]
+
+[tool.setuptools.package-data]
+scribe = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

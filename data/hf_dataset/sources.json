@@ -1,0 +1,28 @@
+{
+  "note": "文脈つき公用文表記（漢字/かな使い分け）用法判定データ。hard スプリットは同一語の両用法。",
+  "license": "CC0-1.0（同梱の合成種文）",
+  "redistribution": "官公庁文書の本文は再配布しない。実データ学習は各自の環境で collect.py 経由。",
+  "known_sources_for_real_training": [
+    {
+      "name": "政府白書（e-Gov 等で公開）",
+      "url": "https://www.e-gov.go.jp/",
+      "license": "各府省の利用規約（多くは出典明示で利用可）",
+      "redistributable": false,
+      "note": "本文の再配布可否は文書ごとに異なる。断片引用に留める。"
+    },
+    {
+      "name": "自治体の例規集・広報（各自治体サイト）",
+      "url": "",
+      "license": "自治体ごとの利用規約（CC BY 等の例あり）",
+      "redistributable": false,
+      "note": "CC BY 等であれば出典明示で利用可。要個別確認。"
+    },
+    {
+      "name": "法令（e-Gov 法令検索）",
+      "url": "https://laws.e-gov.go.jp/",
+      "license": "e-Gov 法令データ 利用規約",
+      "redistributable": false,
+      "note": "条文は規範に沿って書かれている前提だが、hard 集合で検証する。"
+    }
+  ]
+}

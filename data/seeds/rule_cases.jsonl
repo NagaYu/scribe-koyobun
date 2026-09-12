@@ -1,0 +1,11 @@
+{"text": "行なうこととする。", "expect": [{"surface": "行なう", "recommended": "行う", "clause": "R-OKURI-1"}]}
+{"text": "考えを表わす。", "expect": [{"surface": "表わす", "recommended": "表す", "clause": "R-OKURI-1"}]}
+{"text": "問題が起る。", "expect": [{"surface": "起る", "recommended": "起こる", "clause": "R-OKURI-1"}]}
+{"text": "３つの課題がある。", "expect": [{"surface": "３", "recommended": "3", "clause": "R-NUM-1"}]}
+{"text": "距離は１０ｋｍである。", "expect": [{"surface": "１０", "recommended": "10", "clause": "R-NUM-1"}, {"surface": "ｋｍ", "recommended": "km", "clause": "R-UNIT-1"}]}
+{"text": "注意事項(重要)を確認する。", "expect": [{"surface": "(", "recommended": "（", "clause": "R-BRACKET-1"}, {"surface": ")", "recommended": "）", "clause": "R-BRACKET-1"}]}
+{"text": "これは重要である．", "expect": [{"surface": "．", "recommended": "。", "clause": "R-PUNC-1"}]}
+{"text": "第一に,次に検討する。", "expect": [{"surface": ",", "recommended": "、", "clause": "R-PUNC-1"}]}
+{"text": "手続を行う。", "expect": []}
+{"text": "3件の申請を受け付ける。", "expect": []}
+{"text": "現状に問題はない。", "expect": []}
