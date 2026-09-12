@@ -20,6 +20,9 @@ model-index:
       - task:
           type: token-classification
           name: Context-dependent kanji/kana usage judgment
+        dataset:
+          type: NagaYu/scribe-koyobun-usage
+          name: Scribe usage-judgment dataset (test split)
         metrics:
           - type: accuracy
             name: test span accuracy (held-out by document)
