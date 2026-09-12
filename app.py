@@ -118,10 +118,14 @@ def build_demo():
 
     with gr.Blocks(title="Scribe｜公用文の表記判定") as demo:
         gr.Markdown(
-            "# Scribe — 公用文の表記判定\n"
-            "辞書・正規表現では解けない **文脈依存の漢字/かな使い分け** を判定し、"
-            "**規範の条項** を根拠として返します。右側は prh 相当の一律置換で、"
-            "**実質名詞まで平仮名にしてしまう** 例を確認できます。")
+            "# Scribe — kanji/kana checker for Japanese official documents\n"
+            "Judges the **context-dependent kanji/kana usage** that dictionaries and regex cannot solve, and cites "
+            "the **normative clause** as the reason. The right panel shows uniform replacement (prh-style) — note how "
+            "it **turns substantive nouns into kana** by mistake.\n\n"
+            "This demo runs the light **heuristic layer**.  "
+            "\U0001F9E0 [Model](https://huggingface.co/NagaYu/scribe-usage-classifier) \u00b7 "
+            "\U0001F4DA [Dataset](https://huggingface.co/datasets/NagaYu/scribe-koyobun-usage) \u00b7 "
+            "\U0001F4BB [GitHub](https://github.com/NagaYu/scribe-koyobun)")
         with gr.Row():
             inp = gr.Textbox(label="文書を貼り付け", value=EXAMPLE_TEXT, lines=6)
         with gr.Row():
